@@ -10,8 +10,7 @@ test = st.file_uploader("Choose a CSV file", type=['csv'])
 if not test is None: 
        data = pd.read_csv(test, sep=';').drop(columns=['<DATE>', '<TIME>'])   
        result = process(data)
-       st.write(result)
-       print(result)
+       print(st.write(result[1]))
 
 
 
