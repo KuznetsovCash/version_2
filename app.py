@@ -2,13 +2,14 @@
 
 import streamlit as st
 from segment import process
+import pandas as pd
 
 st.title('BTC')
 
 test = st.file_uploader("Choose a CSV file", type=['csv'])
-file_r = test.read()
+data = pd.read_csv(test)
 
-process(file_r)
+process(data)
 
 
 
