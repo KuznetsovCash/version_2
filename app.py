@@ -10,3 +10,4 @@ file = st.file_uploader('Load', type=['csv'])
 if not file in None:
        result = process(file)
 
+
