@@ -5,8 +5,14 @@ from segment import process
 
 st.title('BTC')
 
-file = st.file_uploader('Load')
+test = st.file_uploader("Choose a CSV file")
+file_r = test.read()
 
-process(file)
+process(file_r)
+
+
+
+
+
 
 
