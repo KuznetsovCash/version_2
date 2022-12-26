@@ -5,9 +5,8 @@ from segment import process
 
 st.title('BTC')
 
-file = st.file_uploader('Load', type=['csv'])
+file = st.file_uploader('Load')
 
-if not file in None:
-       result = process(file)
+process(file)
 
 
