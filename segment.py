@@ -40,6 +40,4 @@ def process(test):
     return print(result)
 
 
-test = pd.read_csv('btc1.csv', sep=';').drop(columns=['<DATE>', '<TIME>'])
-process(test)
 
