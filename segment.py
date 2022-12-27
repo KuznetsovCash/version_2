@@ -37,7 +37,7 @@ def process(test):
     pred_list = list(model_predict)
     pred_list = pred_list[0]
     result = ''.join(map(str, pred_list))
-    return print(result)
+    return result
 
 
 
