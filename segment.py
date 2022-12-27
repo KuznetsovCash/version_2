@@ -9,10 +9,10 @@ from tensorflow.keras.preprocessing.sequence import TimeseriesGenerator
 
 from tensorflow.keras.models import load_model
 model = load_model('btc_model_1.h5')
-
+result = None
 
 def process(test):
-    
+    global result
     data1 = test
     data2 = data1[:5]
     
@@ -33,6 +33,13 @@ def process(test):
     x_predict, y_test = generator[0]
     model_predict = y_scaler.inverse_transform(model.predict(x_predict))
 
-    return print(model_predict)
+    
+    pred_list = list(model_predict)
+    pred_list = pred_list[0]
+    result = ''.join(map(str, pred_list))
+    return print(result)
 
+
+test = pd.read_csv('btc1.csv', sep=';').drop(columns=['<DATE>', '<TIME>'])
+process(test)
 
